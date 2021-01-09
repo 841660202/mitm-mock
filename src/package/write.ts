@@ -18,12 +18,13 @@ const mockDir = `${pwd}/src${config.mock}`
 
 export async function writeMock({ method, url, data }: IWrite) {
   // 生成文件夹
+  console.log(mockDir)
   const res = await mkdirp(mockDir)
   // url生成文件名
   const a = url.split('/') || [];
   let fileName: string = '';
-  if (a.length > 2) {
-    fileName = a.splice(1, 2).join('-')
+  if (a.length > config.len) {
+    fileName = a.splice(config.startIdx, config.len).join('-')
   }
   const path = `${mockDir}/${fileName}.ts`
   // 写入文件
@@ -44,6 +45,7 @@ export async function writeContent({ method, url, path, data }: IWrite) {
   // 数据要拼接，而不是覆盖
 
   let _data = {}
+  
   if (existsSync(path)) {
     _data = JSON.parse(readContent(path))
   }

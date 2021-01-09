@@ -30,13 +30,42 @@
 -   如果你懒到无可救药，或许你可以直接拷贝 mock 数据到你现有的 mock 目录，直接写的 mock 数据与事后更新的 mock 数据接口重复了，那么你或许就获取不到最新的 mock 数据了
 -   当然你也可以使用 `git diff` 选择性替换
 
-## feature
+## 使用
+1. git clone
 
+2. 更改配置
+
+```
+  heads: ['warehouseid', 'cookie'], // 请求头设置，取哪些字段作为请求头
+  remoteServer: '', // 换成你后端项目的服务器地址
+  port: 3031, // 此项目所启动的服务器端口
+  prefix: 'api', // proxy替换标记
+  mock: '/mock-am-ding', // 产出
+  startIdx: 2, // /api/v1/user/points、/api/v1/user/currentUser
+  len: 3, // 截取接口 len 长度生成接口所在文件的文件名
+```
+
+3. 启动项目
+
+```
+npm run tsc
+npm run start
+```
+4. 更改本地运行前端项目的请求服务器地址为
+
+```
+http://localhost:3031
+
+```
+
+## feature
+-   POST请求处理
 -   此项目可以配置 `useToken`
 -   此项目可以配置 `useMapCache`
 -   此项目 mock 可以与前端项目 mock 进行自动化 diff
 -   此项目 mock 编辑后，可以自动重启动服务 （目前你可以选择 `nodemon` 启动）
 -   此项目将作为 vscode 的一个插件形式存在
+
 ## 过程（这或许与你无关）
 ```
 npx typescript --init

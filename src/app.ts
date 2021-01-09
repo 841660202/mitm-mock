@@ -19,24 +19,28 @@ class App {
         this.app.get('/api/*', async (req, res) => {
             const { url, method, headers } = req
             console.log(method, url)
+            console.log(headers.token)
             switch (method) {
                 case 'GET':
                     try {
                         // 发送请求
+                        const __url = `${config.remoteServer}${url.replace('api', config.prefix)}`;
+                        console.log(__url);
                         const _res = await superagent
-                            .get(`${config.remoteServer}${url.replace('api', config.prefix)}`)
+                            .get(__url)
                             // 设置些需要的头
                             .set('Content-Type', 'application/json;charset=UTF-8')
                             // set cookie字段
-                            .set('Cookie', headers.cookie)
-                            .set('warehouseId', headers.warehouseid)
+                            .set('Cookie', headers.cookie ?? '')
+                            .set('warehouseId', headers.warehouseid ?? '')
+                            .set('token', headers.token)
                         // 更新mock数据
                         writeMock({
                             method,
                             url,
                             data: JSON.parse(_res?.text)
                         })
-                        console.log(_res?.text)
+                        // console.log('输出：', _res?.text)
                         res.send(_res?.text)
                     } catch (error) {
                         res.send(error)
