@@ -2,7 +2,7 @@
 // console.log("hello")
 // readMock()
 
-import { writeMock } from "../mock-package/write";
+import { writeMock } from "../package/write";
 
 writeMock({
   method: 'GET',

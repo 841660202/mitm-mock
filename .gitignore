@@ -1,5 +1,6 @@
 /node_modules
 /dist
-**/mock
 **/src1
 yarn-error.log
+# 所有mock开头的目录都认为是模拟数据，涉及到company's ...
+mock*

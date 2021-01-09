@@ -4,8 +4,8 @@ import * as cors from 'cors';
 import * as morgan from 'morgan';
 import * as superagent from 'superagent';
 import { config } from './config/index'
-import { readMock } from './mock-package/read'
-import { writeMock } from './mock-package/write'
+import { readMock } from './package/read'
+import { writeMock } from './package/write'
 class App {
     public app: express.Application;
     constructor() {
