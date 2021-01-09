@@ -23,6 +23,8 @@
   "author": "shisan",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.9",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "glob": "^7.1.6",
     "mkdirp": "^1.0.4",

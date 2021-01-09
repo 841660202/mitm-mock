@@ -9,7 +9,8 @@ import * as fs from 'fs'
 import * as mkdirp from 'mkdirp'
 import * as glob from "glob";
 import { readFileSync, writeFileSync, existsSync } from 'fs';
-import { IWrite } from 'd';
+// @ts-ignore
+import { IWrite } from 'commonType';
 // options is optional
 const pwd = process.cwd()
 console.log(pwd)

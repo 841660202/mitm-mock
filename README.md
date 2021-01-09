@@ -81,3 +81,15 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 # https://www.cnblogs.com/zivxiaowei/p/10089201.html
 ```
+
+### 这个参考或许可以用拿到启动多个控制台执行脚本
+```
+#!/bin/bash
+# 先切换当前终端的目录
+cd /etc/redis-6.0.9/src
+
+# 启动另一终端，并切换目录
+gnome-terminal --window -x bash -c "cd /etc/redis-6.0.9/src;exec bash"
+
+
+```

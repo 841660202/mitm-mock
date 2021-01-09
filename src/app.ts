@@ -36,6 +36,7 @@ class App {
                             url,
                             data: JSON.parse(_res?.text)
                         })
+                        console.log(_res?.text)
                         res.send(_res?.text)
                     } catch (error) {
                         res.send(error)
