@@ -37,7 +37,7 @@
 -   此项目 mock 可以与前端项目 mock 进行自动化 diff
 -   此项目 mock 编辑后，可以自动重启动服务 （目前你可以选择 `nodemon` 启动）
 -   此项目将作为 vscode 的一个插件形式存在
-
+## 过程（这或许与你无关）
 ```
 npx typescript --init
 tsc --init
