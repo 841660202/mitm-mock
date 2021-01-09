@@ -63,3 +63,14 @@ git remote add origin git@github.com:841660202/mitm-mock.git
 git push -u origin main
 
 ```
+## git cz
+
+```
+cnpm install -g commitizen
+npm init --yes
+
+git cz
+
+cnpm install -g conventional-changelog conventional-changelog-cli
+
+```

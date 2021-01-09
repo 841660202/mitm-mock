@@ -2,3 +2,4 @@
 /dist
 **/mock
 **/src1
+yarn-error.log

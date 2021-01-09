@@ -12,7 +12,8 @@
     "tsc": "tsc -w ./src/server.ts --outDir dist",
     "restart": "rimraf dist && npm run build && npm start",
     "start": "nodemon ./dist/server.js",
-    "prod": "npm run build && npm run start"
+    "prod": "npm run build && npm run start",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
   },
   "keywords": [
     "update",
