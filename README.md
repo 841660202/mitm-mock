@@ -65,18 +65,19 @@ git push -u origin main
 ```
 ## git cz
 
-```
+```sh
 cnpm install -g commitizen
 npm init --yes
 
 git cz
 
 cnpm install -g conventional-changelog conventional-changelog-cli
-
+# 将 cz-conventional-changelog 增加到命令
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
-"changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
+# npm script 命令
+"changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
 
-conventional-changelog -p angular -i CHANGELOG.md -s
+
 
 # https://www.cnblogs.com/zivxiaowei/p/10089201.html
 ```
