@@ -73,4 +73,10 @@ git cz
 
 cnpm install -g conventional-changelog conventional-changelog-cli
 
+echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+"changelog": "conventional-changelog -p angular -i CHANGELOG.md -w -r 0"
+
+conventional-changelog -p angular -i CHANGELOG.md -s
+
+# https://www.cnblogs.com/zivxiaowei/p/10089201.html
 ```
