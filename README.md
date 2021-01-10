@@ -1,5 +1,6 @@
 ## 名字来源
   `mitm-mock`（全称: Man-in-the-Middle-mock，源自 中间人攻击  `Man-in-the-MiddleAttack`，简称“MITM 攻击”，作为中间人，我们不仅可以攻击还可以 mock,最点正事，所以 Man-in-the-Middle-mock 名字就来了）
+  当然，也可以作为中间件形式存在，类似与umijs中的mock中间件（umi 源码 /packages/preset-built-in/src/index.ts），由于时间关系，不做深究
 ## 说明
 
 -   此项目是为了 mock 数据更新使用的
