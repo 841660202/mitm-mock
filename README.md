@@ -122,3 +122,7 @@ gnome-terminal --window -x bash -c "cd /etc/redis-6.0.9/src;exec bash"
 
 
 ```
+
+```
+code: "ERR_HTTP_INVALID_HEADER_VALUE" 请求头中使用undefine值
+```

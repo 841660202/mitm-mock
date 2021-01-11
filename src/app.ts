@@ -16,7 +16,7 @@ class App {
         // this.app.get('/', (req, res) => {
         //     res.send({ message: 'hello express' });
         // });
-        this.app.get('/api/*', async (req, res) => {
+        this.app.get(`/${config.prefix}/*`, async (req, res) => {
             const { url, method, headers } = req
             console.log(method, url)
             console.log(headers.token)
@@ -33,11 +33,12 @@ class App {
                             // set cookie字段
                             .set('Cookie', headers.cookie ?? '')
                             .set('warehouseId', headers.warehouseid ?? '')
-                            .set('token', headers.token)
+                            .set('token', headers.token ?? '')
                         // 更新mock数据
+                        const noParams = url.split('?')[0]
                         writeMock({
                             method,
-                            url,
+                            url: noParams ? noParams.split('?')[0] : '',
                             data: JSON.parse(_res?.text)
                         })
                         // console.log('输出：', _res?.text)
